@@ -34,6 +34,8 @@ namespace HFM.Client
    /// </summary>
    public class Connection : IDisposable
    {
+      public static readonly bool IsRunningOnMono = Type.GetType("Mono.Runtime") != null;
+
       #region Constants
 
       /// <summary>
@@ -271,6 +273,32 @@ namespace HFM.Client
             if (!ar.AsyncWaitHandle.WaitOne(TimeSpan.FromMilliseconds(ConnectTimeout), false))
             {
                _tcpClient.Close();
+                     /*
+                      * When running on Mono, TcpClient.Close() causes
+                      * asynchronous access (coming from
+                      * BeginConnect-related path) to AsyncWaitHandle.
+                      * This opens a race window with 'finally' block below
+                      * that closes said handle.
+                      *
+                      * Unfortunate chain of events results in the following:
+
+Unhandled Exception: System.ObjectDisposedException: The object was used after being disposed.
+  at System.Threading.WaitHandle.CheckDisposed ()
+  at System.Threading.EventWaitHandle.Set () 
+  at (wrapper remoting-invoke-with-check) System.Threading.EventWaitHandle:Set ()
+  at System.Net.Sockets.Socket+SocketAsyncResult.set_IsCompleted (Boolean value)
+  at System.Net.Sockets.Socket+SocketAsyncResult.Complete ()
+  at System.Net.Sockets.Socket+SocketAsyncResult.Complete (System.Exception e)
+  at System.Net.Sockets.Socket+Worker.Connect ()
+  at System.Net.Sockets.Socket+Worker.DispatcherCB (System.Net.Sockets.SocketAsyncResult sar)
+
+                      * As (in Mono) TcpClient.Close() signals AsyncWaitHandle, we can just
+                      * wait on it before proceeding.
+                      *
+                      */
+               if (IsRunningOnMono)
+                  ar.AsyncWaitHandle.WaitOne();
+
                throw new TimeoutException("Client connection has timed out.");
             }
 
