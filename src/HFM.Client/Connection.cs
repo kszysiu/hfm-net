@@ -55,7 +55,7 @@ namespace HFM.Client
       /// <summary>
       /// Default Socket Receive Timer Length
       /// </summary>
-      private const int DefaultSocketTimerLength = 1;
+      private const int DefaultSocketTimerLength = 10;
 
       #endregion
 
@@ -89,10 +89,7 @@ namespace HFM.Client
       private readonly StringBuilder _readBuffer;
       private readonly Timer _timer;
 
-      /// <summary>
-      /// Don't allow Update() to be called more than once.
-      /// </summary>
-      private bool _updating;
+      private int _updating = 0;
 
       private static readonly object BufferLock = new object();
 
@@ -428,30 +425,37 @@ namespace HFM.Client
 
       internal void SocketTimerElapsed(object sender, ElapsedEventArgs e)
       {
-         Debug.Assert(Connected);
 
-         if (!_updating)
+         if (System.Threading.Interlocked.CompareExchange (ref _updating, 1, 0) == 1)
          {
-            try
-            {
-               _updating = true;
+            return;
+         }
 
-               Update();
-            }
-            catch (Exception ex)
+         Debug.Assert(Connected);
+         try
+         {
+            ((Timer)sender).Stop();
+
+            Update();
+         }
+         catch (Exception ex)
+         {
+            //Console.WriteLine(DateTime.Now + " exception caught -- closing");
+            if (!IsCancelBlockingCallSocketError(ex))
             {
-               if (!IsCancelBlockingCallSocketError(ex))
-               {
-                  OnStatusMessage(new StatusMessageEventArgs(String.Format(CultureInfo.CurrentCulture,
-                     "Update failed: {0}", ex.Message), TraceLevel.Error));
-                  Close();
-               }
+               OnStatusMessage(new StatusMessageEventArgs(String.Format(CultureInfo.CurrentCulture,
+                  "Update failed: {0}", ex.Message), TraceLevel.Error));
             }
-            finally
+            Close();
+         }
+         finally
+         {
+			if (_tcpClient.Connected)
             {
-               _updating = false;
+               ((Timer)sender).Start();
             }
          }
+         _updating = 0;
       }
 
       private static bool IsCancelBlockingCallSocketError(Exception ex)
