@@ -96,8 +96,8 @@ namespace HFM
             if (platform != null)
             {
                string filePath = Path.GetFullPath(Path.Combine(Application.StartupPath, Path.Combine(Path.Combine("SQLite", platform), String.Concat(sqliteDll, ".dll"))));
-               var logger = Core.ServiceLocator.Resolve<Castle.Core.Logging.ILogger>();
-               logger.Info("SQLite DLL Path: {0}", filePath);
+               //var logger = Core.ServiceLocator.Resolve<Castle.Core.Logging.ILogger>();
+               //logger.Info("SQLite DLL Path: {0}", filePath);
                if (File.Exists(filePath))
                {
                   return System.Reflection.Assembly.LoadFile(filePath);
