@@ -1,0 +1,182 @@
+diff --git a/src/HFM.Client/HFM.Client.csproj b/src/HFM.Client/HFM.Client.csproj
+index 855a01f..67f6d8e 100644
+--- a/src/HFM.Client/HFM.Client.csproj
++++ b/src/HFM.Client/HFM.Client.csproj
+@@ -10,9 +10,7 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Client</RootNamespace>
+     <AssemblyName>HFM.Client</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj b/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj
+index 60e5f0c..e83d506 100644
+--- a/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj
++++ b/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj
+@@ -10,9 +10,7 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Core.DataTypes</RootNamespace>
+     <AssemblyName>HFM.Core.DataTypes</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj b/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj
+index 86b7f0f..d960082 100644
+--- a/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj
++++ b/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Core.Plugins</RootNamespace>
+     <AssemblyName>HFM.Core.Plugins</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+@@ -31,7 +30,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Core/HFM.Core.csproj b/src/HFM.Core/HFM.Core.csproj
+index 748ae0e..d6ad158 100644
+--- a/src/HFM.Core/HFM.Core.csproj
++++ b/src/HFM.Core/HFM.Core.csproj
+@@ -10,9 +10,7 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Core</RootNamespace>
+     <AssemblyName>HFM.Core</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Forms/HFM.Forms.csproj b/src/HFM.Forms/HFM.Forms.csproj
+index 7873f18..027a8d2 100644
+--- a/src/HFM.Forms/HFM.Forms.csproj
++++ b/src/HFM.Forms/HFM.Forms.csproj
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Forms</RootNamespace>
+     <AssemblyName>HFM.Forms</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+@@ -31,7 +30,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Log/HFM.Log.csproj b/src/HFM.Log/HFM.Log.csproj
+index 22e4799..ce4ff4b 100644
+--- a/src/HFM.Log/HFM.Log.csproj
++++ b/src/HFM.Log/HFM.Log.csproj
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Log</RootNamespace>
+     <AssemblyName>HFM.Log</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+@@ -31,7 +30,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Preferences/HFM.Preferences.csproj b/src/HFM.Preferences/HFM.Preferences.csproj
+index 49e8dc9..f70aee7 100644
+--- a/src/HFM.Preferences/HFM.Preferences.csproj
++++ b/src/HFM.Preferences/HFM.Preferences.csproj
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Preferences</RootNamespace>
+     <AssemblyName>HFM.Preferences</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+     <OldToolsVersion>3.5</OldToolsVersion>
+@@ -30,7 +29,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Proteins/HFM.Proteins.csproj b/src/HFM.Proteins/HFM.Proteins.csproj
+index 0b213c7..ff69333 100644
+--- a/src/HFM.Proteins/HFM.Proteins.csproj
++++ b/src/HFM.Proteins/HFM.Proteins.csproj
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Proteins</RootNamespace>
+     <AssemblyName>HFM.Proteins</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+     <OldToolsVersion>3.5</OldToolsVersion>
+@@ -30,7 +29,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM.Queue/HFM.Queue.csproj b/src/HFM.Queue/HFM.Queue.csproj
+index f577236..2a2ffe3 100644
+--- a/src/HFM.Queue/HFM.Queue.csproj
++++ b/src/HFM.Queue/HFM.Queue.csproj
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>HFM.Queue</RootNamespace>
+     <AssemblyName>HFM.Queue</AssemblyName>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+@@ -31,7 +30,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+diff --git a/src/HFM/HFM.csproj b/src/HFM/HFM.csproj
+index b904bbc..800ad18 100644
+--- a/src/HFM/HFM.csproj
++++ b/src/HFM/HFM.csproj
+@@ -15,7 +15,6 @@
+     <ApplicationIcon>hfm_48_48.ico</ApplicationIcon>
+     <Win32Resource>
+     </Win32Resource>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+     <OldToolsVersion>3.5</OldToolsVersion>
+@@ -35,7 +34,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
