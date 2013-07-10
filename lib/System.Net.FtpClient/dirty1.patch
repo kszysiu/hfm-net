@@ -1,0 +1,20 @@
+diff --git a/System.Net.FtpClient/FtpHash.cs b/System.Net.FtpClient/FtpHash.cs
+index 9f0d8f1..c4d0236 100644
+--- a/System.Net.FtpClient/FtpHash.cs
++++ b/System.Net.FtpClient/FtpHash.cs
+@@ -101,10 +101,12 @@ namespace System.Net.FtpClient {
+                     }
+                 }
+                 finally {
+-#if !NET2 // .NET 2.0 doesn't provide access to Dispose() for HashAlgorithm
+                     if (hashAlg != null)
+-                        hashAlg.Dispose();
+-#endif
++                        hashAlg.Clear();
++                            /*
++                             * per MSDN, .Clear() and .Dispose()
++                             * are equivalent
++                             */
+                 }
+             }
+ 
