@@ -236,7 +236,9 @@ namespace HFM.Core
       WebMobileSummary,
       WebSlot,
       RunMinimized,
+#if !NO_UPDATE_CHECK
       StartupCheckForUpdate,
+#endif // !NO_UPDATE_CHECK
       UseDefaultConfigFile,
       DefaultConfigFile,
       OfflineLast,

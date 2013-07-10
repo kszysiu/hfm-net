@@ -114,7 +114,9 @@ namespace HFM.Forms
          this.txtDefaultConfigFile = new harlam357.Windows.Forms.ValidatingTextBox();
          this.label1 = new HFM.Forms.Controls.LabelWrapper();
          this.grpStartup = new HFM.Forms.Controls.GroupBoxWrapper();
+#if !NO_UPDATE_CHECK
          this.chkCheckForUpdate = new HFM.Forms.Controls.CheckBoxWrapper();
+#endif // !NO_UPDATE_CHECK
          this.chkAutoRun = new HFM.Forms.Controls.CheckBoxWrapper();
          this.chkRunMinimized = new HFM.Forms.Controls.CheckBoxWrapper();
          this.tabOptions = new System.Windows.Forms.TabPage();
@@ -939,7 +941,9 @@ namespace HFM.Forms
          // 
          // grpStartup
          // 
+#if !NO_UPDATE_CHECK
          this.grpStartup.Controls.Add(this.chkCheckForUpdate);
+#endif // !NO_UPDATE_CHECK
          this.grpStartup.Controls.Add(this.chkAutoRun);
          this.grpStartup.Controls.Add(this.chkRunMinimized);
          this.grpStartup.Location = new System.Drawing.Point(6, 9);
@@ -951,6 +955,7 @@ namespace HFM.Forms
          // 
          // chkCheckForUpdate
          // 
+#if !NO_UPDATE_CHECK
          this.chkCheckForUpdate.AutoSize = true;
          this.chkCheckForUpdate.Location = new System.Drawing.Point(310, 20);
          this.chkCheckForUpdate.Name = "chkCheckForUpdate";
@@ -958,6 +963,7 @@ namespace HFM.Forms
          this.chkCheckForUpdate.TabIndex = 2;
          this.chkCheckForUpdate.Text = "Check for Updates";
          this.chkCheckForUpdate.UseVisualStyleBackColor = true;
+#endif // !NO_UPDATE_CHECK
          // 
          // chkAutoRun
          // 
@@ -2237,7 +2243,9 @@ namespace HFM.Forms
       private CheckBoxWrapper chkEmailSecure;
       private ValidatingTextBox txtSmtpServerPort;
       private LabelWrapper labelWrapper3;
+#if !NO_UPDATE_CHECK
       private CheckBoxWrapper chkCheckForUpdate;
+#endif // !NO_UPDATE_CHECK
       private GroupBoxWrapper grpFileExplorer;
       private ButtonWrapper btnBrowseFileExplorer;
       private LabelWrapper label4;

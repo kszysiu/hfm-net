@@ -302,10 +302,12 @@ namespace HFM.Forms
 
          SetViewShowStyle();
 
+#if !NO_UPDATE_CHECK
          if (_prefs.Get<bool>(Preference.StartupCheckForUpdate))
          {
             _updateLogic.CheckForUpdate();
          }
+#endif // !NO_UPDATE_CHECK
       }
 
       public void ViewResize()

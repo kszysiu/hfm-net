@@ -112,7 +112,9 @@ namespace HFM.Forms
          this.mnuHelpIndex = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuHelpSep2 = new System.Windows.Forms.ToolStripSeparator();
          this.mnuHelpHfmGroup = new System.Windows.Forms.ToolStripMenuItem();
+#if !NO_UPDATE_CHECK
          this.mnuHelpCheckForUpdate = new System.Windows.Forms.ToolStripMenuItem();
+#endif // !NO_UPDATE_CHECK
          this.mnuHelpSep3 = new System.Windows.Forms.ToolStripSeparator();
          this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
          this.gridContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -773,7 +775,9 @@ namespace HFM.Forms
             this.mnuHelpIndex,
             this.mnuHelpSep2,
             this.mnuHelpHfmGroup,
+#if !NO_UPDATE_CHECK
             this.mnuHelpCheckForUpdate,
+#endif // !NO_UPDATE_CHECK
             this.mnuHelpSep3,
             this.mnuHelpAbout});
          this.mnuHelp.Name = "mnuHelp";
@@ -828,6 +832,7 @@ namespace HFM.Forms
          this.mnuHelpHfmGroup.Size = new System.Drawing.Size(206, 22);
          this.mnuHelpHfmGroup.Text = "HFM.NET &Google Group";
          this.mnuHelpHfmGroup.Click += new System.EventHandler(this.mnuHelpHfmGroup_Click);
+#if !NO_UPDATE_CHECK
          // 
          // mnuHelpCheckForUpdate
          // 
@@ -835,6 +840,7 @@ namespace HFM.Forms
          this.mnuHelpCheckForUpdate.Size = new System.Drawing.Size(206, 22);
          this.mnuHelpCheckForUpdate.Text = "Check for &Updates...";
          this.mnuHelpCheckForUpdate.Click += new System.EventHandler(this.mnuHelpCheckForUpdate_Click);
+#endif // !NO_UPDATE_CHECK
          // 
          // mnuHelpSep3
          // 
@@ -1179,7 +1185,9 @@ namespace HFM.Forms
       private System.Windows.Forms.ToolStripMenuItem mnuHelpHfmGroup;
       private System.Windows.Forms.ToolStripSeparator mnuHelpSep2;
       private System.Windows.Forms.ToolStripMenuItem mnuViewToggleCompletedCountStyle;
+#if !NO_UPDATE_CHECK
       private System.Windows.Forms.ToolStripMenuItem mnuHelpCheckForUpdate;
+#endif // !NO_UPDATE_CHECK
       private System.Windows.Forms.ToolStripSeparator mnuHelpSep3;
       private System.Windows.Forms.ToolStripMenuItem mnuHelpHfmLogFile;
       private System.Windows.Forms.ToolStripMenuItem mnuViewMessages;

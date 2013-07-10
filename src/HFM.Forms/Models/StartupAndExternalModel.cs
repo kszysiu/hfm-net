@@ -34,7 +34,9 @@ namespace HFM.Forms.Models
       public void Load(IPreferenceSet prefs)
       {
          RunMinimized = prefs.Get<bool>(Preference.RunMinimized);
+#if !NO_UPDATE_CHECK
          StartupCheckForUpdate = prefs.Get<bool>(Preference.StartupCheckForUpdate);
+#endif // !NO_UPDATE_CHECK
          DefaultConfigFile = prefs.Get<string>(Preference.DefaultConfigFile);
          UseDefaultConfigFile = prefs.Get<bool>(Preference.UseDefaultConfigFile);
          LogFileViewer = prefs.Get<string>(Preference.LogFileViewer);
@@ -44,7 +46,9 @@ namespace HFM.Forms.Models
       public void Update(IPreferenceSet prefs)
       {
          prefs.Set(Preference.RunMinimized, RunMinimized);
+#if !NO_UPDATE_CHECK
          prefs.Set(Preference.StartupCheckForUpdate, StartupCheckForUpdate);
+#endif // !NO_UPDATE_CHECK
          prefs.Set(Preference.DefaultConfigFile, DefaultConfigFile);
          prefs.Set(Preference.UseDefaultConfigFile, UseDefaultConfigFile);
          prefs.Set(Preference.LogFileViewer, LogFileViewer);
@@ -68,6 +72,7 @@ namespace HFM.Forms.Models
          }
       }
 
+#if !NO_UPDATE_CHECK
       private bool _startupCheckForUpdate;
 
       public bool StartupCheckForUpdate
@@ -82,6 +87,7 @@ namespace HFM.Forms.Models
             }
          }
       }
+#endif // !NO_UPDATE_CHECK
       
       #endregion
 

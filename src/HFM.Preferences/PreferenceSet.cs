@@ -283,7 +283,9 @@ namespace HFM.Preferences
          _prefs.Add(Preference.WebSlot, new Metadata<string>());
 
          _prefs.Add(Preference.RunMinimized, new Metadata<bool>());
+#if !NO_UPDATE_CHECK
          _prefs.Add(Preference.StartupCheckForUpdate, new Metadata<bool>());
+#endif // !NO_UPDATE_CHECK
          _prefs.Add(Preference.UseDefaultConfigFile, new Metadata<bool>());
          _prefs.Add(Preference.DefaultConfigFile, new Metadata<string>());
 
@@ -409,7 +411,9 @@ namespace HFM.Preferences
          Set(Preference.WebSlot, Settings.Default.WebSlot);
 
          Set(Preference.RunMinimized, Settings.Default.RunMinimized);
+#if !NO_UPDATE_CHECK
          Set(Preference.StartupCheckForUpdate, Settings.Default.StartupCheckForUpdate);
+#endif // !NO_UPDATE_CHECK
          Set(Preference.UseDefaultConfigFile, Settings.Default.UseDefaultConfigFile);
          Set(Preference.DefaultConfigFile, Settings.Default.DefaultConfigFile);
 
@@ -843,7 +847,9 @@ namespace HFM.Preferences
             Settings.Default.WebSlot = Get<string>(Preference.WebSlot);
 
             Settings.Default.RunMinimized = Get<bool>(Preference.RunMinimized);
+#if !NO_UPDATE_CHECK
             Settings.Default.StartupCheckForUpdate = Get<bool>(Preference.StartupCheckForUpdate);
+#endif // !NO_UPDATE_CHECK
             Settings.Default.UseDefaultConfigFile = Get<bool>(Preference.UseDefaultConfigFile);
             Settings.Default.DefaultConfigFile = Get<string>(Preference.DefaultConfigFile);
             // if config file name is nothing, automatically set default config to false

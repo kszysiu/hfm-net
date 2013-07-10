@@ -855,6 +855,7 @@ namespace HFM.Preferences.Properties {
             }
         }
         
+#if !NO_UPDATE_CHECK
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
@@ -866,6 +867,7 @@ namespace HFM.Preferences.Properties {
                 this["StartupCheckForUpdate"] = value;
             }
         }
+#endif // !NO_UPDATE_CHECK
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

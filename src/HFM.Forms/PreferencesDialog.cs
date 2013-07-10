@@ -497,7 +497,9 @@ namespace HFM.Forms
          }
          
          chkRunMinimized.BindChecked(_startupAndExternalModel, "RunMinimized");
+#if !NO_UPDATE_CHECK
          chkCheckForUpdate.BindChecked(_startupAndExternalModel, "StartupCheckForUpdate");
+#endif // !NO_UPDATE_CHECK
          #endregion
 
          #region Configuration File
