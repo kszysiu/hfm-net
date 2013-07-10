@@ -144,6 +144,16 @@ namespace HFM.Core
          FileName = String.Empty;
       }
    
+      private String ExpandPath(String path)
+      {
+         String dirName = System.IO.Path.GetDirectoryName(path);
+         if (dirName.Length == 0) {
+            /* no path components -- plain file name provided */
+            return System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Constants.ExeName, System.IO.Path.GetFileName(path));
+         }
+         return path;
+      }
+
       /// <summary>
       /// Reads a collection of client settings from a file.
       /// </summary>
@@ -156,7 +166,7 @@ namespace HFM.Core
          Debug.Assert(filterIndex <= _settingsPlugins.Count());
 
          var serializer = _settingsPlugins[filterIndex - 1].Interface;
-         List<ClientSettings> settings = serializer.Deserialize(filePath);
+         List<ClientSettings> settings = serializer.Deserialize(ExpandPath(filePath));
 
          if (settings.Count != 0)
          {
@@ -181,7 +191,7 @@ namespace HFM.Core
          if (filterIndex < 1 || filterIndex > _settingsPlugins.Count()) throw new ArgumentOutOfRangeException("filterIndex");
 
          var serializer = _settingsPlugins[filterIndex - 1].Interface;
-         serializer.Serialize(filePath, settingsCollection.ToList());
+         serializer.Serialize(ExpandPath(filePath), settingsCollection.ToList());
 
          FilterIndex = filterIndex;
          FileName = filePath;
