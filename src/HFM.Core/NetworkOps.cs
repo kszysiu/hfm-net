@@ -25,6 +25,7 @@ using System.IO;
 using System.Net;
 using System.Net.Cache;
 using System.Net.Mail;
+using System.Net.FtpClient;
 
 using harlam357.Net;
 
@@ -206,9 +207,30 @@ namespace HFM.Core
       {
          if (resourceUri == null) throw new ArgumentNullException("resourceUri");
 
-         FtpUploadHelper((FtpWebOperation)WebOperation.Create(resourceUri), localFilePath, maximumLength, username, password, ftpMode);
+         using (FtpClient conn = new FtpClient()) {
+            conn.Host = resourceUri.Host;
+            conn.Port = resourceUri.Port;
+            conn.Credentials = new NetworkCredential(username, password);
+            conn.DataConnectionType = ftpMode == FtpType.Passive ? FtpDataConnectionType.AutoPassive : FtpDataConnectionType.AutoActive;
+
+            using (Stream ostream = conn.OpenWrite(resourceUri.AbsolutePath)) {
+               try {
+                  FileStream istream = new FileStream(localFilePath, FileMode.Open, FileAccess.Read);
+                  try {
+                     istream.CopyTo(ostream);
+                  }
+                  finally {
+                     istream.Close();
+                  }
+               }
+               finally {
+                  ostream.Close();
+               }
+            }
+         }
       }
 
+#if false
       /// <summary>
       /// Upload a File via Ftp.
       /// </summary>
@@ -249,6 +271,7 @@ namespace HFM.Core
          _ftpWebOperation.Upload(localFilePath, maximumLength);
       }
 
+#endif
       /// <summary>
       /// Download a File via Ftp.
       /// </summary>
