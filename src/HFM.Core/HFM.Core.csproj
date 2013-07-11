@@ -75,6 +75,9 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Net.FtpClient">
+      <HintPath>..\..\lib\System.Net.FtpClient\System.Net.FtpClient.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\AssemblyVersion.cs">
