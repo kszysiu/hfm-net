@@ -1,0 +1,140 @@
+diff --git a/src/HFM.Client/HFM.Client.csproj b/src/HFM.Client/HFM.Client.csproj
+index a3cfdf2..541902e 100644
+--- a/src/HFM.Client/HFM.Client.csproj
++++ b/src/HFM.Client/HFM.Client.csproj
+@@ -35,9 +35,6 @@
+     <DocumentationFile>bin\Release\HFM.Client.xml</DocumentationFile>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <AssemblyOriginatorKeyFile>..\harlam357public.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj b/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj
+index 40c6787..4760f2b 100644
+--- a/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj
++++ b/src/HFM.Core.DataTypes/HFM.Core.DataTypes.csproj
+@@ -33,9 +33,6 @@
+     <DocumentationFile>bin\Release\HFM.Core.DataTypes.xml</DocumentationFile>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <AssemblyOriginatorKeyFile>..\harlam357public.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj b/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj
+index 7ee911b..2beb86e 100644
+--- a/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj
++++ b/src/HFM.Core.Plugins/HFM.Core.Plugins.csproj
+@@ -54,9 +54,6 @@
+     <DocumentationFile>bin\Release\HFM.Core.Plugins.xml</DocumentationFile>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <AssemblyOriginatorKeyFile>..\harlam357public.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Core/HFM.Core.csproj b/src/HFM.Core/HFM.Core.csproj
+index 5e3761a..9c3def5 100644
+--- a/src/HFM.Core/HFM.Core.csproj
++++ b/src/HFM.Core/HFM.Core.csproj
+@@ -32,9 +32,6 @@
+     <WarningLevel>4</WarningLevel>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <AssemblyOriginatorKeyFile>..\harlam357public.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Forms/HFM.Forms.csproj b/src/HFM.Forms/HFM.Forms.csproj
+index e3a8d60..229f328 100644
+--- a/src/HFM.Forms/HFM.Forms.csproj
++++ b/src/HFM.Forms/HFM.Forms.csproj
+@@ -53,9 +53,6 @@
+     <CodeAnalysisRuleSet>..\..\..\hfm-net\src\HFM.ruleset</CodeAnalysisRuleSet>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <AssemblyOriginatorKeyFile>..\harlam357public.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Log/HFM.Log.csproj b/src/HFM.Log/HFM.Log.csproj
+index f116b1d..d6eb7ce 100644
+--- a/src/HFM.Log/HFM.Log.csproj
++++ b/src/HFM.Log/HFM.Log.csproj
+@@ -54,9 +54,6 @@
+     <DocumentationFile>bin\Release\HFM.Log.xml</DocumentationFile>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <AssemblyOriginatorKeyFile>..\harlam357public.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Preferences/HFM.Preferences.csproj b/src/HFM.Preferences/HFM.Preferences.csproj
+index ed6f4a2..5c46b3b 100644
+--- a/src/HFM.Preferences/HFM.Preferences.csproj
++++ b/src/HFM.Preferences/HFM.Preferences.csproj
+@@ -54,9 +54,6 @@
+     <CodeAnalysisRuleSet>..\..\..\hfm-net\src\HFM.ruleset</CodeAnalysisRuleSet>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <DelaySign>true</DelaySign>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Proteins/HFM.Proteins.csproj b/src/HFM.Proteins/HFM.Proteins.csproj
+index 2ce9ddc..ea4ce76 100644
+--- a/src/HFM.Proteins/HFM.Proteins.csproj
++++ b/src/HFM.Proteins/HFM.Proteins.csproj
+@@ -55,9 +55,6 @@
+     <DocumentationFile>bin\Release\HFM.Proteins.xml</DocumentationFile>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <DelaySign>true</DelaySign>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM.Queue/HFM.Queue.csproj b/src/HFM.Queue/HFM.Queue.csproj
+index 253f9f9..2782a93 100644
+--- a/src/HFM.Queue/HFM.Queue.csproj
++++ b/src/HFM.Queue/HFM.Queue.csproj
+@@ -54,9 +54,6 @@
+     <CodeAnalysisRuleSet>..\..\..\hfm-net\src\HFM.ruleset</CodeAnalysisRuleSet>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <DelaySign>true</DelaySign>
+   </PropertyGroup>
+   <PropertyGroup>
+diff --git a/src/HFM/HFM.csproj b/src/HFM/HFM.csproj
+index 47a76da..6ccaf20 100644
+--- a/src/HFM/HFM.csproj
++++ b/src/HFM/HFM.csproj
+@@ -71,9 +71,6 @@
+     <CodeAnalysisRuleSet>..\..\..\hfm-net\src\HFM.ruleset</CodeAnalysisRuleSet>
+   </PropertyGroup>
+   <PropertyGroup>
+-    <SignAssembly>true</SignAssembly>
+-  </PropertyGroup>
+-  <PropertyGroup>
+     <AssemblyOriginatorKeyFile>..\harlam357public.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup>
