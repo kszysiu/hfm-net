@@ -430,14 +430,14 @@ namespace HFM.Forms
          _presenter.FileNewClick();
       }
 
-      private void mnuFileOpen_Click(object sender, EventArgs e)
+      private void mnuFileImport_Click(object sender, EventArgs e)
       {
-         _presenter.FileOpenClick();
+         _presenter.FileImportClick();
       }
 
-      private void mnuFileSaveas_Click(object sender, EventArgs e)
+      private void mnuFileExport_Click(object sender, EventArgs e)
       {
-         _presenter.FileSaveAsClick();
+         _presenter.FileExportClick();
       }
 
       private void mnuFileQuit_Click(object sender, EventArgs e)

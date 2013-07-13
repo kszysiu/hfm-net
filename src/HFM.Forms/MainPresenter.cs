@@ -616,7 +616,7 @@ namespace HFM.Forms
          }
       }
 
-      public void FileOpenClick()
+      public void FileImportClick()
       {
          //if (_retrievalLogic.RetrievalInProgress)
          //{
@@ -720,7 +720,7 @@ namespace HFM.Forms
          }
       }
 
-      public void FileSaveAsClick()
+      public void FileExportClick()
       {
          // no clients, stub out
          if (_clientDictionary.Count == 0) return;

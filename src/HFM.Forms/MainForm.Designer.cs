@@ -57,8 +57,8 @@ namespace HFM.Forms
          this.AppMenu = new System.Windows.Forms.MenuStrip();
          this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
-         this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
-         this.mnuFileSaveas = new System.Windows.Forms.ToolStripMenuItem();
+         this.mnuFileImport = new System.Windows.Forms.ToolStripMenuItem();
+         this.mnuFileExport = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuFileSep1 = new System.Windows.Forms.ToolStripSeparator();
          this.mnuFileQuit = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -373,8 +373,8 @@ namespace HFM.Forms
          // 
          this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFileNew,
-            this.mnuFileOpen,
-            this.mnuFileSaveas,
+            this.mnuFileImport,
+            this.mnuFileExport,
             this.mnuFileSep1,
             this.mnuFileQuit});
          this.mnuFile.Name = "mnuFile";
@@ -391,24 +391,24 @@ namespace HFM.Forms
          this.mnuFileNew.ToolTipText = "Create a new configuration file";
          this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
          // 
-         // mnuFileOpen
+         // mnuFileImport
          // 
-         this.mnuFileOpen.Image = global::HFM.Forms.Properties.Resources.Open;
-         this.mnuFileOpen.Name = "mnuFileOpen";
-         this.mnuFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-         this.mnuFileOpen.Size = new System.Drawing.Size(263, 22);
-         this.mnuFileOpen.Text = "&Open Configuration";
-         this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
+         this.mnuFileImport.Image = global::HFM.Forms.Properties.Resources.Import;
+         this.mnuFileImport.Name = "mnuFileImport";
+         this.mnuFileImport.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+         this.mnuFileImport.Size = new System.Drawing.Size(263, 22);
+         this.mnuFileImport.Text = "&Import Configuration...";
+         this.mnuFileImport.Click += new System.EventHandler(this.mnuFileImport_Click);
          // 
-         // mnuFileSaveas
+         // mnuFileExport
          // 
-         this.mnuFileSaveas.Image = global::HFM.Forms.Properties.Resources.SaveAs;
-         this.mnuFileSaveas.Name = "mnuFileSaveas";
-         this.mnuFileSaveas.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-         this.mnuFileSaveas.Size = new System.Drawing.Size(263, 22);
-         this.mnuFileSaveas.Text = "Save Configuration &As";
-         this.mnuFileSaveas.Click += new System.EventHandler(this.mnuFileSaveas_Click);
+         this.mnuFileExport.Image = global::HFM.Forms.Properties.Resources.Export;
+         this.mnuFileExport.Name = "mnuFileExport";
+         this.mnuFileExport.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.E)));
+         this.mnuFileExport.Size = new System.Drawing.Size(263, 22);
+         this.mnuFileExport.Text = "&Export Configuration...";
+         this.mnuFileExport.Click += new System.EventHandler(this.mnuFileExport_Click);
          // 
          // mnuFileSep1
          // 
@@ -1112,8 +1112,8 @@ namespace HFM.Forms
       private System.Windows.Forms.MenuStrip AppMenu;
       private System.Windows.Forms.ToolStripMenuItem mnuFile;
       private System.Windows.Forms.ToolStripMenuItem mnuFileNew;
-      private System.Windows.Forms.ToolStripMenuItem mnuFileOpen;
-      private System.Windows.Forms.ToolStripMenuItem mnuFileSaveas;
+      private System.Windows.Forms.ToolStripMenuItem mnuFileImport;
+      private System.Windows.Forms.ToolStripMenuItem mnuFileExport;
       private System.Windows.Forms.ToolStripSeparator mnuFileSep1;
       private System.Windows.Forms.ToolStripMenuItem mnuFileQuit;
       private System.Windows.Forms.ToolStripMenuItem mnuEdit;

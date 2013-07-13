@@ -137,9 +137,9 @@ namespace HFM.Forms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Open {
+        internal static System.Drawing.Bitmap Import {
             get {
-                object obj = ResourceManager.GetObject("Open", resourceCulture);
+                object obj = ResourceManager.GetObject("Import", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -167,9 +167,9 @@ namespace HFM.Forms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap SaveAs {
+        internal static System.Drawing.Bitmap Export {
             get {
-                object obj = ResourceManager.GetObject("SaveAs", resourceCulture);
+                object obj = ResourceManager.GetObject("Export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
