@@ -720,24 +720,17 @@ namespace HFM.Forms
             _settingsManager.ClearFileName();
          }
 
-         if (_settingsManager.FileName.Length == 0)
+         try
          {
-            FileSaveAsClick();
+            _settingsManager.Write(_clientDictionary.Values.Select(x => x.Settings), Constants.ExeName + ".hfmx", 
+                                   _settingsManager.FilterIndex == 2 ? 1 : _settingsManager.FilterIndex);
+            _clientDictionary.IsDirty = false;
          }
-         else
+         catch (Exception ex)
          {
-            try
-            {
-               _settingsManager.Write(_clientDictionary.Values.Select(x => x.Settings), Constants.ExeName + ".hfmx", 
-                                      _settingsManager.FilterIndex == 2 ? 1 : _settingsManager.FilterIndex);
-               _clientDictionary.IsDirty = false;
-            }
-            catch (Exception ex)
-            {
-               _logger.ErrorFormat(ex, "{0}", ex.Message);
-               _messageBoxView.ShowError(_view, String.Format(CultureInfo.CurrentCulture,
-                  "The client configuration has not been saved.{0}{0}{1}", Environment.NewLine, ex.Message), _view.Text);
-            }
+            _logger.ErrorFormat(ex, "{0}", ex.Message);
+            _messageBoxView.ShowError(_view, String.Format(CultureInfo.CurrentCulture,
+               "The client configuration has not been saved.{0}{0}{1}", Environment.NewLine, ex.Message), _view.Text);
          }
       }
 
