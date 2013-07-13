@@ -714,16 +714,9 @@ namespace HFM.Forms
          // no clients, stub out
          if (_clientDictionary.Count == 0) return;
 
-         // index 2 is hard coded to legacy serializer
-         if (_settingsManager.FilterIndex == 2)
-         {
-            _settingsManager.ClearFileName();
-         }
-
          try
          {
-            _settingsManager.Write(_clientDictionary.Values.Select(x => x.Settings), Constants.ExeName + ".hfmx", 
-                                   _settingsManager.FilterIndex == 2 ? 1 : _settingsManager.FilterIndex);
+            _settingsManager.Write(_clientDictionary.Values.Select(x => x.Settings), Constants.ExeName + ".hfmx", 1);
             _clientDictionary.IsDirty = false;
          }
          catch (Exception ex)
