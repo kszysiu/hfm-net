@@ -283,18 +283,7 @@ namespace HFM.Forms
          }
 
          Debug.Assert(Arguments != null);
-         var openFile = Arguments.FirstOrDefault(x => x.Type.Equals(ArgumentType.OpenFile));
-         if (openFile != null)
-         {
-            if (!String.IsNullOrEmpty(openFile.Data))
-            {
-               LoadConfigFile(openFile.Data);
-            }
-         }
-         else
-         {
-            LoadConfigFile(Constants.ExeName + ".hfmx");
-         }
+         LoadConfigFile(Constants.ExeName + ".hfmx");
 
          SetViewShowStyle();
 

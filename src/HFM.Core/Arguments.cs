@@ -34,7 +34,6 @@ namespace HFM.Core
    public static class Arguments
    {
       private const string ResetPrefsArg = "/r";
-      private const string OpenFileArg = "/f";
    
       /// <summary>
       /// Parse Raw Arguments.
@@ -50,22 +49,6 @@ namespace HFM.Core
             if (args[i] == ResetPrefsArg)
             {
                arguments.Add(new Argument { Type = ArgumentType.ResetPrefs });
-            }
-            else if (args[i] == OpenFileArg)
-            {
-               string data = String.Empty;
-               if (i + 1 < args.Count)
-               {
-                  data = args[++i];
-               }
-               if (data.Length == 0 || data.StartsWith("/", StringComparison.Ordinal))
-               {
-                  arguments.Add(new Argument { Type = ArgumentType.Error, Data = "Missing file name argument." });
-               }
-               else
-               {
-                  arguments.Add(new Argument { Type = ArgumentType.OpenFile, Data = data });
-               }
             }
             else
             {
