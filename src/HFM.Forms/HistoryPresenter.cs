@@ -35,8 +35,6 @@ namespace HFM.Forms
       private readonly IQueryParametersCollection _queryCollection;
       private readonly IHistoryView _view;
       private readonly IQueryView _queryView;
-      private readonly IOpenFileDialogView _openFileView;
-      private readonly ISaveFileDialogView _saveFileView;
       private readonly IMessageBoxView _messageBoxView;
       private readonly HistoryPresenterModel _model;
       
@@ -50,8 +48,6 @@ namespace HFM.Forms
          _queryCollection = queryCollection;
          _view = view;
          _queryView = queryView;
-         _openFileView = openFileView;
-         _saveFileView = saveFileView;
          _messageBoxView = messageBoxView;
          _model = model;
       }
