@@ -210,12 +210,12 @@ namespace HFM.Forms
                chkXml.Enabled = _scheduledTasksModel.GenerateWeb;
                chkFAHlog.Enabled = _scheduledTasksModel.GenerateWeb;
                TestConnectionButton.Enabled = _scheduledTasksModel.GenerateWeb;
+               WebGenTypePanel.Enabled = _scheduledTasksModel.GenerateWeb;
                break;
             case "GenerateIntervalEnabled":
                txtWebGenMinutes.Enabled = _scheduledTasksModel.GenerateIntervalEnabled;
                break;
             case "FtpModeEnabled":
-               WebGenTypePanel.Enabled = _scheduledTasksModel.FtpModeEnabled;
                WebSiteServerTextBox.Enabled = _scheduledTasksModel.FtpModeEnabled;
                WebSiteServerLabel.Enabled = _scheduledTasksModel.FtpModeEnabled;
                WebSitePortTextBox.Enabled = _scheduledTasksModel.FtpModeEnabled;
