@@ -77,9 +77,6 @@
     <Setting Name="OfflineLast" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="DefaultConfigFile" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="PpdCalculation" Type="System.String" Scope="User">
       <Value Profile="(Default)">LastThreeFrames</Value>
     </Setting>

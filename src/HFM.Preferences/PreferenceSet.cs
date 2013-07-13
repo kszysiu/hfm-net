@@ -286,7 +286,6 @@ namespace HFM.Preferences
 #if !NO_UPDATE_CHECK
          _prefs.Add(Preference.StartupCheckForUpdate, new Metadata<bool>());
 #endif // !NO_UPDATE_CHECK
-         _prefs.Add(Preference.DefaultConfigFile, new Metadata<string>());
 
          _prefs.Add(Preference.OfflineLast, new Metadata<bool>());
          _prefs.Add(Preference.ColorLogFile, new Metadata<bool>());
@@ -412,7 +411,6 @@ namespace HFM.Preferences
 #if !NO_UPDATE_CHECK
          Set(Preference.StartupCheckForUpdate, Settings.Default.StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
-         Set(Preference.DefaultConfigFile, Settings.Default.DefaultConfigFile);
 
          Set(Preference.OfflineLast, Settings.Default.OfflineLast);
          Set(Preference.ColorLogFile, Settings.Default.ColorLogFile);
@@ -846,7 +844,6 @@ namespace HFM.Preferences
 #if !NO_UPDATE_CHECK
             Settings.Default.StartupCheckForUpdate = Get<bool>(Preference.StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
-            Settings.Default.DefaultConfigFile = Get<string>(Preference.DefaultConfigFile);
 
             if (Settings.Default.OfflineLast != Get<bool>(Preference.OfflineLast))
             {

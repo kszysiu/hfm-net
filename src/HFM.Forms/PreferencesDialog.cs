@@ -260,9 +260,6 @@ namespace HFM.Forms
       {
          switch (propertyName)
          {
-            case "DefaultConfigFile":
-               txtDefaultConfigFile.Text = _startupAndExternalModel.DefaultConfigFile;
-               break;
             case "LogFileViewer":
                txtLogFileViewer.Text = _startupAndExternalModel.LogFileViewer;
                break;
@@ -488,11 +485,6 @@ namespace HFM.Forms
 #if !NO_UPDATE_CHECK
          chkCheckForUpdate.BindChecked(_startupAndExternalModel, "StartupCheckForUpdate");
 #endif // !NO_UPDATE_CHECK
-         #endregion
-
-         #region Configuration File
-         txtDefaultConfigFile.BindText(_startupAndExternalModel, "DefaultConfigFile");
-         
          #endregion
 
          #region External Programs
@@ -1014,15 +1006,6 @@ namespace HFM.Forms
       }
 
       #region Folder Browsing
-
-      private void btnBrowseConfigFile_Click(object sender, EventArgs e)
-      {
-         string path = DoFolderBrowse(_startupAndExternalModel.DefaultConfigFile, HfmExt, HfmFilter);
-         if (String.IsNullOrEmpty(path) == false)
-         {
-            _startupAndExternalModel.DefaultConfigFile = path;
-         }
-      }
 
       private void btnBrowseLogViewer_Click(object sender, EventArgs e)
       {

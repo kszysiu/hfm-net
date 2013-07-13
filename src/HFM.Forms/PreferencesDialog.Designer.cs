@@ -108,10 +108,6 @@ namespace HFM.Forms
          this.btnBrowseLogViewer = new HFM.Forms.Controls.ButtonWrapper();
          this.label3 = new HFM.Forms.Controls.LabelWrapper();
          this.txtLogFileViewer = new harlam357.Windows.Forms.ValidatingTextBox();
-         this.grpDefaultConfig = new HFM.Forms.Controls.GroupBoxWrapper();
-         this.chkDefaultConfig = new HFM.Forms.Controls.CheckBoxWrapper();
-         this.btnBrowseConfigFile = new HFM.Forms.Controls.ButtonWrapper();
-         this.txtDefaultConfigFile = new harlam357.Windows.Forms.ValidatingTextBox();
          this.label1 = new HFM.Forms.Controls.LabelWrapper();
          this.grpStartup = new HFM.Forms.Controls.GroupBoxWrapper();
 #if !NO_UPDATE_CHECK
@@ -215,7 +211,6 @@ namespace HFM.Forms
          this.tabStartup.SuspendLayout();
          this.grpFileExplorer.SuspendLayout();
          this.grpLogFileViewer.SuspendLayout();
-         this.grpDefaultConfig.SuspendLayout();
          this.grpStartup.SuspendLayout();
          this.tabOptions.SuspendLayout();
          this.grpShowStyle.SuspendLayout();
@@ -773,7 +768,6 @@ namespace HFM.Forms
          // 
          this.tabStartup.Controls.Add(this.grpFileExplorer);
          this.tabStartup.Controls.Add(this.grpLogFileViewer);
-         this.tabStartup.Controls.Add(this.grpDefaultConfig);
          this.tabStartup.Controls.Add(this.grpStartup);
          this.tabStartup.Location = new System.Drawing.Point(4, 22);
          this.tabStartup.Name = "tabStartup";
@@ -876,58 +870,6 @@ namespace HFM.Forms
          this.txtLogFileViewer.Size = new System.Drawing.Size(384, 20);
          this.txtLogFileViewer.TabIndex = 1;
          this.txtLogFileViewer.ValidationType = harlam357.Windows.Forms.ValidationType.None;
-         // 
-         // grpDefaultConfig
-         // 
-         this.grpDefaultConfig.Controls.Add(this.chkDefaultConfig);
-         this.grpDefaultConfig.Controls.Add(this.btnBrowseConfigFile);
-         this.grpDefaultConfig.Controls.Add(this.txtDefaultConfigFile);
-         this.grpDefaultConfig.Controls.Add(this.label1);
-         this.grpDefaultConfig.Location = new System.Drawing.Point(6, 65);
-         this.grpDefaultConfig.Name = "grpDefaultConfig";
-         this.grpDefaultConfig.Size = new System.Drawing.Size(489, 86);
-         this.grpDefaultConfig.TabIndex = 4;
-         this.grpDefaultConfig.TabStop = false;
-         this.grpDefaultConfig.Text = "Configuration File";
-         // 
-         // chkDefaultConfig
-         // 
-         this.chkDefaultConfig.AutoSize = true;
-         this.chkDefaultConfig.Location = new System.Drawing.Point(10, 22);
-         this.chkDefaultConfig.Name = "chkDefaultConfig";
-         this.chkDefaultConfig.Size = new System.Drawing.Size(134, 17);
-         this.chkDefaultConfig.TabIndex = 0;
-         this.chkDefaultConfig.Text = "Load Configuration File";
-         this.chkDefaultConfig.UseVisualStyleBackColor = true;
-         // 
-         // btnBrowseConfigFile
-         // 
-         this.btnBrowseConfigFile.Enabled = false;
-         this.btnBrowseConfigFile.Location = new System.Drawing.Point(456, 47);
-         this.btnBrowseConfigFile.Name = "btnBrowseConfigFile";
-         this.btnBrowseConfigFile.Size = new System.Drawing.Size(24, 23);
-         this.btnBrowseConfigFile.TabIndex = 3;
-         this.btnBrowseConfigFile.Text = "...";
-         this.btnBrowseConfigFile.UseVisualStyleBackColor = true;
-         this.btnBrowseConfigFile.Click += new System.EventHandler(this.btnBrowseConfigFile_Click);
-         // 
-         // txtDefaultConfigFile
-         // 
-         this.txtDefaultConfigFile.BackColor = System.Drawing.SystemColors.Control;
-         this.txtDefaultConfigFile.DoubleBuffered = true;
-         this.txtDefaultConfigFile.Enabled = false;
-         this.txtDefaultConfigFile.ErrorBackColor = System.Drawing.Color.Yellow;
-         this.txtDefaultConfigFile.ErrorState = false;
-         this.txtDefaultConfigFile.ErrorToolTip = null;
-         this.txtDefaultConfigFile.ErrorToolTipDuration = 5000;
-         this.txtDefaultConfigFile.ErrorToolTipPoint = new System.Drawing.Point(10, -20);
-         this.txtDefaultConfigFile.ErrorToolTipText = "";
-         this.txtDefaultConfigFile.Location = new System.Drawing.Point(66, 49);
-         this.txtDefaultConfigFile.Name = "txtDefaultConfigFile";
-         this.txtDefaultConfigFile.ReadOnly = true;
-         this.txtDefaultConfigFile.Size = new System.Drawing.Size(384, 20);
-         this.txtDefaultConfigFile.TabIndex = 2;
-         this.txtDefaultConfigFile.ValidationType = harlam357.Windows.Forms.ValidationType.None;
          // 
          // label1
          // 
@@ -2084,8 +2026,6 @@ namespace HFM.Forms
          this.grpFileExplorer.PerformLayout();
          this.grpLogFileViewer.ResumeLayout(false);
          this.grpLogFileViewer.PerformLayout();
-         this.grpDefaultConfig.ResumeLayout(false);
-         this.grpDefaultConfig.PerformLayout();
          this.grpStartup.ResumeLayout(false);
          this.grpStartup.PerformLayout();
          this.tabOptions.ResumeLayout(false);
@@ -2194,10 +2134,6 @@ namespace HFM.Forms
       private CheckBoxWrapper chkRunMinimized;
       private CheckBoxWrapper chkAutoRun;
       private CheckBoxWrapper chkFAHlog;
-      private GroupBoxWrapper grpDefaultConfig;
-      private CheckBoxWrapper chkDefaultConfig;
-      private ButtonWrapper btnBrowseConfigFile;
-      private ValidatingTextBox txtDefaultConfigFile;
       private LabelWrapper label1;
       private GroupBoxWrapper grpInteractiveOptions;
       private CheckBoxWrapper chkColorLog;

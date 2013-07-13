@@ -293,11 +293,7 @@ namespace HFM.Forms
          }
          else
          {
-            var fileName = _prefs.Get<string>(Preference.DefaultConfigFile);
-            if (!String.IsNullOrEmpty(fileName))
-            {
-               LoadConfigFile(fileName);
-            }
+            LoadConfigFile(Constants.ExeName + ".hfmx");
          }
 
          SetViewShowStyle();

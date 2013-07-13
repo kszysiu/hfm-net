@@ -37,7 +37,6 @@ namespace HFM.Forms.Models
 #if !NO_UPDATE_CHECK
          StartupCheckForUpdate = prefs.Get<bool>(Preference.StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
-         DefaultConfigFile = prefs.Get<string>(Preference.DefaultConfigFile);
          LogFileViewer = prefs.Get<string>(Preference.LogFileViewer);
          FileExplorer = prefs.Get<string>(Preference.FileExplorer);
       }
@@ -48,7 +47,6 @@ namespace HFM.Forms.Models
 #if !NO_UPDATE_CHECK
          prefs.Set(Preference.StartupCheckForUpdate, StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
-         prefs.Set(Preference.DefaultConfigFile, DefaultConfigFile);
          prefs.Set(Preference.LogFileViewer, LogFileViewer);
          prefs.Set(Preference.FileExplorer, FileExplorer);
       }
@@ -87,26 +85,6 @@ namespace HFM.Forms.Models
       }
 #endif // !NO_UPDATE_CHECK
       
-      #endregion
-
-      #region Configuration File
-
-      private string _defaultConfigFile;
-
-      public string DefaultConfigFile
-      {
-         get { return _defaultConfigFile; }
-         set
-         {
-            if (DefaultConfigFile != value)
-            {
-               string newValue = value == null ? String.Empty : value.Trim();
-               _defaultConfigFile = newValue;
-               OnPropertyChanged("DefaultConfigFile");
-            }
-         }
-      }
-
       #endregion
 
       #region External Programs
