@@ -31,16 +31,6 @@ namespace HFM.Core
    public interface IClientSettingsManager
    {
       /// <summary>
-      /// Client Configuration Filename
-      /// </summary>
-      string FileName { get; }
-
-      /// <summary>
-      /// Current Plugin Index
-      /// </summary>
-      int FilterIndex { get; }
-
-      /// <summary>
       /// Number of Settings Plugins
       /// </summary>
       int PluginCount { get; }
@@ -51,11 +41,6 @@ namespace HFM.Core
       string FileExtension { get; }
 
       string FileTypeFilters { get; }
-
-      /// <summary>
-      /// Clear the Configuration Filename
-      /// </summary>
-      void ClearFileName();
 
       /// <summary>
       /// Reads a collection of client settings from a file.
@@ -81,23 +66,6 @@ namespace HFM.Core
       /// Current File Name
       /// </summary>
       public string FileName { get; private set; }
-
-      private int _filterIndex;
-      /// <summary>
-      /// Current Filter Index
-      /// </summary>
-      public int FilterIndex
-      {
-         get
-         {
-            if (_filterIndex < 1 || _filterIndex > PluginCount)
-            {
-               return 1;
-            }
-            return _filterIndex;
-         }
-         private set { _filterIndex = value; }
-      }
 
       /// <summary>
       /// Number of Plugins
@@ -132,18 +100,8 @@ namespace HFM.Core
       public ClientSettingsManager(IFileSerializerPluginManager<List<ClientSettings>> settingsPlugins)
       {
          _settingsPlugins = settingsPlugins;
-
-         ClearFileName();
       }
 
-      /// <summary>
-      /// Clear the Configuration Filename
-      /// </summary>
-      public void ClearFileName()
-      {
-         FileName = String.Empty;
-      }
-   
       private String ExpandPath(String path)
       {
          String dirName = System.IO.Path.GetDirectoryName(path);
@@ -168,13 +126,6 @@ namespace HFM.Core
          var serializer = _settingsPlugins[filterIndex - 1].Interface;
          List<ClientSettings> settings = serializer.Deserialize(ExpandPath(filePath));
 
-         if (settings.Count != 0)
-         {
-            // update the settings plugin index only if something was loaded
-            FilterIndex = filterIndex;
-            FileName = filePath;
-         }
-
          return settings.AsReadOnly();
       }
 
@@ -192,9 +143,6 @@ namespace HFM.Core
 
          var serializer = _settingsPlugins[filterIndex - 1].Interface;
          serializer.Serialize(ExpandPath(filePath), settingsCollection.ToList());
-
-         FilterIndex = filterIndex;
-         FileName = filePath;
       }
    }
 }

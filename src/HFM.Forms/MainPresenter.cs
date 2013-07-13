@@ -649,9 +649,6 @@ namespace HFM.Forms
             _retrievalLogic.Abort();
          }
 
-         // clear the clients and UI
-         _settingsManager.ClearFileName();
-         // 
          if (_clientDictionary.Count != 0)
          {
             SaveCurrentUnitInfo();
