@@ -728,7 +728,7 @@ namespace HFM.Forms
          {
             try
             {
-               _settingsManager.Write(_clientDictionary.Values.Select(x => x.Settings), _settingsManager.FileName, 
+               _settingsManager.Write(_clientDictionary.Values.Select(x => x.Settings), Constants.ExeName + ".hfmx", 
                                       _settingsManager.FilterIndex == 2 ? 1 : _settingsManager.FilterIndex);
                _clientDictionary.IsDirty = false;
             }
