@@ -648,6 +648,8 @@ namespace HFM.Forms
          _propertyCollection[(int)TabName.WebVisualStyles] = TypeDescriptor.GetProperties(_webVisualStylesModel);
          _models[(int)TabName.WebVisualStyles] = _webVisualStylesModel;
       
+         if (Core.Application.IsRunningOnMono)
+               StyleList.Sorted = false;
          StyleList.DataSource = _webVisualStylesModel.CssFileList;
          StyleList.DisplayMember = "DisplayMember";
          StyleList.ValueMember = "ValueMember";
