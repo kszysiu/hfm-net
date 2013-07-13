@@ -58,7 +58,6 @@ namespace HFM.Forms
          this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
-         this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuFileSaveas = new System.Windows.Forms.ToolStripMenuItem();
          this.mnuFileSep1 = new System.Windows.Forms.ToolStripSeparator();
          this.mnuFileQuit = new System.Windows.Forms.ToolStripMenuItem();
@@ -375,7 +374,6 @@ namespace HFM.Forms
          this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFileNew,
             this.mnuFileOpen,
-            this.mnuFileSave,
             this.mnuFileSaveas,
             this.mnuFileSep1,
             this.mnuFileQuit});
@@ -401,15 +399,6 @@ namespace HFM.Forms
          this.mnuFileOpen.Size = new System.Drawing.Size(263, 22);
          this.mnuFileOpen.Text = "&Open Configuration";
          this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
-         // 
-         // mnuFileSave
-         // 
-         this.mnuFileSave.Image = global::HFM.Forms.Properties.Resources.Save;
-         this.mnuFileSave.Name = "mnuFileSave";
-         this.mnuFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-         this.mnuFileSave.Size = new System.Drawing.Size(263, 22);
-         this.mnuFileSave.Text = "&Save Configuration";
-         this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
          // 
          // mnuFileSaveas
          // 
@@ -1124,7 +1113,6 @@ namespace HFM.Forms
       private System.Windows.Forms.ToolStripMenuItem mnuFile;
       private System.Windows.Forms.ToolStripMenuItem mnuFileNew;
       private System.Windows.Forms.ToolStripMenuItem mnuFileOpen;
-      private System.Windows.Forms.ToolStripMenuItem mnuFileSave;
       private System.Windows.Forms.ToolStripMenuItem mnuFileSaveas;
       private System.Windows.Forms.ToolStripSeparator mnuFileSep1;
       private System.Windows.Forms.ToolStripMenuItem mnuFileQuit;

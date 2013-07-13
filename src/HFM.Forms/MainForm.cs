@@ -435,11 +435,6 @@ namespace HFM.Forms
          _presenter.FileOpenClick();
       }
 
-      private void mnuFileSave_Click(object sender, EventArgs e)
-      {
-         _presenter.FileSaveClick();
-      }
-
       private void mnuFileSaveas_Click(object sender, EventArgs e)
       {
          _presenter.FileSaveAsClick();
