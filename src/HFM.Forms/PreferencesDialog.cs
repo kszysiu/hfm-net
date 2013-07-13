@@ -252,19 +252,7 @@ namespace HFM.Forms
       {
          if (Core.Application.IsRunningOnMono && this.Enabled == true)
          {
-            HandleStartupAndExternalPropertyEnabledForMono(e.PropertyName);
             HandleStartupAndExternalPropertyChangedForMono(e.PropertyName);
-         }
-      }
-
-      private void HandleStartupAndExternalPropertyEnabledForMono(string propertyName)
-      {
-         switch (propertyName)
-         {
-            case "UseDefaultConfigFile":
-               txtDefaultConfigFile.Enabled = _startupAndExternalModel.UseDefaultConfigFile;
-               btnBrowseConfigFile.Enabled = _startupAndExternalModel.UseDefaultConfigFile;
-               break;
          }
       }
 
@@ -503,11 +491,8 @@ namespace HFM.Forms
          #endregion
 
          #region Configuration File
-         txtDefaultConfigFile.BindEnabled(_startupAndExternalModel, "UseDefaultConfigFile");
-         btnBrowseConfigFile.BindEnabled(_startupAndExternalModel, "UseDefaultConfigFile");
          txtDefaultConfigFile.BindText(_startupAndExternalModel, "DefaultConfigFile");
          
-         chkDefaultConfig.BindChecked(_startupAndExternalModel, "UseDefaultConfigFile");
          #endregion
 
          #region External Programs

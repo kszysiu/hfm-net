@@ -286,7 +286,6 @@ namespace HFM.Preferences
 #if !NO_UPDATE_CHECK
          _prefs.Add(Preference.StartupCheckForUpdate, new Metadata<bool>());
 #endif // !NO_UPDATE_CHECK
-         _prefs.Add(Preference.UseDefaultConfigFile, new Metadata<bool>());
          _prefs.Add(Preference.DefaultConfigFile, new Metadata<string>());
 
          _prefs.Add(Preference.OfflineLast, new Metadata<bool>());
@@ -413,7 +412,6 @@ namespace HFM.Preferences
 #if !NO_UPDATE_CHECK
          Set(Preference.StartupCheckForUpdate, Settings.Default.StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
-         Set(Preference.UseDefaultConfigFile, Settings.Default.UseDefaultConfigFile);
          Set(Preference.DefaultConfigFile, Settings.Default.DefaultConfigFile);
 
          Set(Preference.OfflineLast, Settings.Default.OfflineLast);
@@ -848,14 +846,7 @@ namespace HFM.Preferences
 #if !NO_UPDATE_CHECK
             Settings.Default.StartupCheckForUpdate = Get<bool>(Preference.StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
-            Settings.Default.UseDefaultConfigFile = Get<bool>(Preference.UseDefaultConfigFile);
             Settings.Default.DefaultConfigFile = Get<string>(Preference.DefaultConfigFile);
-            // if config file name is nothing, automatically set default config to false
-            if (Settings.Default.DefaultConfigFile.Length == 0)
-            {
-               Set(Preference.UseDefaultConfigFile, false);
-               Settings.Default.UseDefaultConfigFile = false;
-            }
 
             if (Settings.Default.OfflineLast != Get<bool>(Preference.OfflineLast))
             {

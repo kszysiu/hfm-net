@@ -239,7 +239,6 @@ namespace HFM.Core
 #if !NO_UPDATE_CHECK
       StartupCheckForUpdate,
 #endif // !NO_UPDATE_CHECK
-      UseDefaultConfigFile,
       DefaultConfigFile,
       OfflineLast,
       ColorLogFile,

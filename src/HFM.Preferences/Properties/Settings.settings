@@ -80,9 +80,6 @@
     <Setting Name="DefaultConfigFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="UseDefaultConfigFile" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="PpdCalculation" Type="System.String" Scope="User">
       <Value Profile="(Default)">LastThreeFrames</Value>
     </Setting>

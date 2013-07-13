@@ -38,7 +38,6 @@ namespace HFM.Forms.Models
          StartupCheckForUpdate = prefs.Get<bool>(Preference.StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
          DefaultConfigFile = prefs.Get<string>(Preference.DefaultConfigFile);
-         UseDefaultConfigFile = prefs.Get<bool>(Preference.UseDefaultConfigFile);
          LogFileViewer = prefs.Get<string>(Preference.LogFileViewer);
          FileExplorer = prefs.Get<string>(Preference.FileExplorer);
       }
@@ -50,7 +49,6 @@ namespace HFM.Forms.Models
          prefs.Set(Preference.StartupCheckForUpdate, StartupCheckForUpdate);
 #endif // !NO_UPDATE_CHECK
          prefs.Set(Preference.DefaultConfigFile, DefaultConfigFile);
-         prefs.Set(Preference.UseDefaultConfigFile, UseDefaultConfigFile);
          prefs.Set(Preference.LogFileViewer, LogFileViewer);
          prefs.Set(Preference.FileExplorer, FileExplorer);
       }
@@ -105,30 +103,10 @@ namespace HFM.Forms.Models
                string newValue = value == null ? String.Empty : value.Trim();
                _defaultConfigFile = newValue;
                OnPropertyChanged("DefaultConfigFile");
-               
-               if (newValue.Length == 0)
-               {
-                  UseDefaultConfigFile = false;
-               }
             }
          }
       }
 
-      private bool _useDefaultConfigFile;
-
-      public bool UseDefaultConfigFile
-      {
-         get { return _useDefaultConfigFile; }
-         set
-         {
-            if (UseDefaultConfigFile != value)
-            {
-               _useDefaultConfigFile = value;
-               OnPropertyChanged("UseDefaultConfigFile");
-            }
-         }
-      }
-      
       #endregion
 
       #region External Programs

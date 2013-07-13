@@ -334,18 +334,6 @@ namespace HFM.Preferences.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UseDefaultConfigFile {
-            get {
-                return ((bool)(this["UseDefaultConfigFile"]));
-            }
-            set {
-                this["UseDefaultConfigFile"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("LastThreeFrames")]
         public string PpdCalculation {
             get {

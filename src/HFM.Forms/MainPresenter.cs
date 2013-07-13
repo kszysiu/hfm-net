@@ -291,7 +291,7 @@ namespace HFM.Forms
                LoadConfigFile(openFile.Data);
             }
          }
-         else if (_prefs.Get<bool>(Preference.UseDefaultConfigFile))
+         else
          {
             var fileName = _prefs.Get<string>(Preference.DefaultConfigFile);
             if (!String.IsNullOrEmpty(fileName))
