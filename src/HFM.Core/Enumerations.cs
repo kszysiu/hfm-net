@@ -243,7 +243,6 @@ namespace HFM.Core
       DefaultConfigFile,
       OfflineLast,
       ColorLogFile,
-      AutoSaveConfig,
       PpdCalculation,
       DecimalPlaces,
       CalculateBonus,

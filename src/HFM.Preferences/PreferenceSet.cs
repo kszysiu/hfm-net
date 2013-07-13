@@ -291,7 +291,6 @@ namespace HFM.Preferences
 
          _prefs.Add(Preference.OfflineLast, new Metadata<bool>());
          _prefs.Add(Preference.ColorLogFile, new Metadata<bool>());
-         _prefs.Add(Preference.AutoSaveConfig, new Metadata<bool>());
          _prefs.Add(Preference.PpdCalculation, new Metadata<PpdCalculationType>());
          _prefs.Add(Preference.DecimalPlaces, new Metadata<int>());
          _prefs.Add(Preference.CalculateBonus, new Metadata<BonusCalculationType>());
@@ -419,7 +418,6 @@ namespace HFM.Preferences
 
          Set(Preference.OfflineLast, Settings.Default.OfflineLast);
          Set(Preference.ColorLogFile, Settings.Default.ColorLogFile);
-         Set(Preference.AutoSaveConfig, Settings.Default.AutoSaveConfig);
          Set(Preference.PpdCalculation, GetPpdCalculation());
          Set(Preference.DecimalPlaces, Settings.Default.DecimalPlaces);
          Set(Preference.CalculateBonus, GetBonusCalculation());
@@ -869,7 +867,6 @@ namespace HFM.Preferences
                raiseColorLogFileChanged = true;
             }
             Settings.Default.ColorLogFile = Get<bool>(Preference.ColorLogFile);
-            Settings.Default.AutoSaveConfig = Get<bool>(Preference.AutoSaveConfig);
             if (Settings.Default.PpdCalculation != Get<PpdCalculationType>(Preference.PpdCalculation).ToString())
             {
                raisePpdCalculationChanged = true;

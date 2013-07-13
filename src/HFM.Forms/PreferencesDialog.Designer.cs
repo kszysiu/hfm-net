@@ -133,7 +133,6 @@ namespace HFM.Forms
          this.chkOffline = new HFM.Forms.Controls.CheckBoxWrapper();
          this.chkColorLog = new HFM.Forms.Controls.CheckBoxWrapper();
          this.udDecimalPlaces = new System.Windows.Forms.NumericUpDown();
-         this.chkAutoSave = new HFM.Forms.Controls.CheckBoxWrapper();
          this.labelWrapper1 = new HFM.Forms.Controls.LabelWrapper();
          this.grpDebugMessageLevel = new HFM.Forms.Controls.GroupBoxWrapper();
          this.cboMessageLevel = new HFM.Forms.Controls.ComboBoxWrapper();
@@ -1039,7 +1038,6 @@ namespace HFM.Forms
          this.grpInteractiveOptions.Controls.Add(this.chkOffline);
          this.grpInteractiveOptions.Controls.Add(this.chkColorLog);
          this.grpInteractiveOptions.Controls.Add(this.udDecimalPlaces);
-         this.grpInteractiveOptions.Controls.Add(this.chkAutoSave);
          this.grpInteractiveOptions.Controls.Add(this.labelWrapper1);
          this.grpInteractiveOptions.Location = new System.Drawing.Point(6, 9);
          this.grpInteractiveOptions.Name = "grpInteractiveOptions";
@@ -1132,16 +1130,6 @@ namespace HFM.Forms
          this.udDecimalPlaces.Name = "udDecimalPlaces";
          this.udDecimalPlaces.Size = new System.Drawing.Size(39, 20);
          this.udDecimalPlaces.TabIndex = 7;
-         // 
-         // chkAutoSave
-         // 
-         this.chkAutoSave.AutoSize = true;
-         this.chkAutoSave.Location = new System.Drawing.Point(10, 72);
-         this.chkAutoSave.Name = "chkAutoSave";
-         this.chkAutoSave.Size = new System.Drawing.Size(216, 17);
-         this.chkAutoSave.TabIndex = 2;
-         this.chkAutoSave.Text = "Auto Save Configuration when Changed";
-         this.chkAutoSave.UseVisualStyleBackColor = true;
          // 
          // labelWrapper1
          // 
@@ -2212,7 +2200,6 @@ namespace HFM.Forms
       private ValidatingTextBox txtDefaultConfigFile;
       private LabelWrapper label1;
       private GroupBoxWrapper grpInteractiveOptions;
-      private CheckBoxWrapper chkAutoSave;
       private CheckBoxWrapper chkColorLog;
       private CheckBoxWrapper chkOffline;
       private LabelWrapper label2;

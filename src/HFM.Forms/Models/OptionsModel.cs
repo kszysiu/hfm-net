@@ -39,7 +39,6 @@ namespace HFM.Forms.Models
       {
          OfflineLast = prefs.Get<bool>(Preference.OfflineLast);
          ColorLogFile = prefs.Get<bool>(Preference.ColorLogFile);
-         AutoSaveConfig = prefs.Get<bool>(Preference.AutoSaveConfig);
          PpdCalculation = prefs.Get<PpdCalculationType>(Preference.PpdCalculation);
          DecimalPlaces = prefs.Get<int>(Preference.DecimalPlaces);
          CalculateBonus = prefs.Get<BonusCalculationType>(Preference.CalculateBonus);
@@ -55,7 +54,6 @@ namespace HFM.Forms.Models
       {
          prefs.Set(Preference.OfflineLast, OfflineLast);
          prefs.Set(Preference.ColorLogFile, ColorLogFile);
-         prefs.Set(Preference.AutoSaveConfig, AutoSaveConfig);
          prefs.Set(Preference.PpdCalculation, PpdCalculation);
          prefs.Set(Preference.DecimalPlaces, DecimalPlaces);
          prefs.Set(Preference.CalculateBonus, CalculateBonus);
@@ -95,21 +93,6 @@ namespace HFM.Forms.Models
             {
                _colorLogFile = value;
                OnPropertyChanged("ColorLogFile");
-            }
-         }
-      }
-
-      private bool _autoSaveConfig;
-
-      public bool AutoSaveConfig
-      {
-         get { return _autoSaveConfig; }
-         set
-         {
-            if (AutoSaveConfig != value)
-            {
-               _autoSaveConfig = value;
-               OnPropertyChanged("AutoSaveConfig");
             }
          }
       }

@@ -718,8 +718,7 @@ namespace HFM.Forms
 
       private void AutoSaveConfig()
       {
-         if (_prefs.Get<bool>(Preference.AutoSaveConfig) &&
-             _clientDictionary.IsDirty)
+         if (_clientDictionary.IsDirty)
          {
             FileSaveClick();
          }

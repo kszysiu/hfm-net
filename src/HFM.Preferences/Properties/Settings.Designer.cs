@@ -451,19 +451,7 @@ namespace HFM.Preferences.Properties {
                 this["FormLogWindowHeight"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AutoSaveConfig {
-            get {
-                return ((bool)(this["AutoSaveConfig"]));
-            }
-            set {
-                this["AutoSaveConfig"] = value;
-            }
-        }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
