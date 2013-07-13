@@ -187,7 +187,7 @@ namespace HFM.Forms
       private void ScheduledTasksPropertyChanged(object sender, PropertyChangedEventArgs e)
       {
          SetPropertyErrorState((int)TabName.ScheduledTasks, e.PropertyName, true);
-         if (Core.Application.IsRunningOnMono)
+         if (Core.Application.IsRunningOnMono && this.Enabled == true)
          {
             HandleScheduledTasksPropertyEnabledForMono(e.PropertyName);
             HandleScheduledTasksPropertyChangedForMono(e.PropertyName);
@@ -250,7 +250,7 @@ namespace HFM.Forms
       
       private void StartupAndExternalPropertyChanged(object sender, PropertyChangedEventArgs e)
       {
-         if (Core.Application.IsRunningOnMono)
+         if (Core.Application.IsRunningOnMono && this.Enabled == true)
          {
             HandleStartupAndExternalPropertyEnabledForMono(e.PropertyName);
             HandleStartupAndExternalPropertyChangedForMono(e.PropertyName);
@@ -287,7 +287,7 @@ namespace HFM.Forms
       private void ReportingPropertyChanged(object sender, PropertyChangedEventArgs e)
       {
          SetPropertyErrorState((int)TabName.Reporting, e.PropertyName, true);
-         if (Core.Application.IsRunningOnMono) HandleReportingPropertyEnabledForMono(e.PropertyName);
+         if (Core.Application.IsRunningOnMono && this.Enabled == true) HandleReportingPropertyEnabledForMono(e.PropertyName);
       }
 
       private void HandleReportingPropertyEnabledForMono(string propertyName)
@@ -311,7 +311,7 @@ namespace HFM.Forms
       private void WebSettingsChanged(object sender, PropertyChangedEventArgs e)
       {
          SetPropertyErrorState((int)TabName.WebSettings, e.PropertyName, true);
-         if (Core.Application.IsRunningOnMono) HandleWebSettingsPropertyEnabledForMono(e.PropertyName);
+         if (Core.Application.IsRunningOnMono && this.Enabled == true) HandleWebSettingsPropertyEnabledForMono(e.PropertyName);
       }
 
       private void HandleWebSettingsPropertyEnabledForMono(string propertyName)
@@ -332,7 +332,7 @@ namespace HFM.Forms
 
       private void WebVisualStylesPropertyChanged(object sender, PropertyChangedEventArgs e)
       {
-         if (Core.Application.IsRunningOnMono) HandleWebVisualStylesPropertyChangedForMono(e.PropertyName);
+         if (Core.Application.IsRunningOnMono && this.Enabled == true) HandleWebVisualStylesPropertyChangedForMono(e.PropertyName);
       }
 
       private void HandleWebVisualStylesPropertyChangedForMono(string propertyName)
