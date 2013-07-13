@@ -319,10 +319,7 @@ namespace HFM.Forms
 
       public bool ViewClosing()
       {
-         if (!CheckForConfigurationChanges())
-         {
-            return true;
-         }
+         Debug.Assert(_clientDictionary.IsDirty == false);
 
          SaveColumnSettings();
          SaveCurrentUnitInfo();
@@ -613,7 +610,7 @@ namespace HFM.Forms
          //   return;
          //}
 
-         if (CheckForConfigurationChanges())
+         if (CheckForClients())
          {
             ClearConfiguration();
          }
@@ -627,7 +624,7 @@ namespace HFM.Forms
          //   return;
          //}
 
-         if (CheckForConfigurationChanges())
+         if (CheckForClients())
          {
             _openFileDialogView.DefaultExt = _settingsManager.FileExtension;
             _openFileDialogView.Filter = _settingsManager.FileTypeFilters;
@@ -747,25 +744,15 @@ namespace HFM.Forms
          }
       }
 
-      private bool CheckForConfigurationChanges()
+      private bool CheckForClients()
       {
-         if (_clientDictionary.Count != 0 && _clientDictionary.IsDirty)
+         if (_clientDictionary.Count != 0)
          {
-            DialogResult result = _messageBoxView.AskYesNoCancelQuestion(_view,
-               String.Format("There are changes to the configuration that have not been saved.  Would you like to save these changes?{0}{0}Yes - Continue and save the changes / No - Continue and do not save the changes / Cancel - Do not continue", Environment.NewLine),
+            DialogResult result = _messageBoxView.AskYesNoQuestion(_view,
+               String.Format("Existing clients will be removed.  Proceed?", Environment.NewLine),
                _view.Text);
 
-            switch (result)
-            {
-               case DialogResult.Yes:
-                  FileSaveClick();
-                  return !(_clientDictionary.IsDirty);
-               case DialogResult.No:
-                  return true;
-               case DialogResult.Cancel:
-                  return false;
-            }
-            return false;
+            return result == DialogResult.Yes;
          }
 
          return true;
