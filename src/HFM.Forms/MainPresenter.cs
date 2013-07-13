@@ -631,7 +631,6 @@ namespace HFM.Forms
          {
             _openFileDialogView.DefaultExt = _settingsManager.FileExtension;
             _openFileDialogView.Filter = _settingsManager.FileTypeFilters;
-            _openFileDialogView.FileName = _settingsManager.FileName;
             _openFileDialogView.RestoreDirectory = true;
             if (_openFileDialogView.ShowDialog().Equals(DialogResult.OK))
             {
