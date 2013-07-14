@@ -212,6 +212,7 @@ namespace HFM.Core
 
          if (added != 0)
          {
+            IsDirty = true;
             OnDictionaryChanged(EventArgs.Empty);
             OnClientDataDirty(new ClientDataDirtyEventArgs());
          }
@@ -471,9 +472,9 @@ namespace HFM.Core
             _cacheLock.ExitWriteLock();
          }
 
-         IsDirty = false;
          if (hasValues)
          {
+            IsDirty = true;
             OnDictionaryChanged(EventArgs.Empty);
          }
       }
