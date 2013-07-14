@@ -388,7 +388,7 @@ namespace HFM.Forms
          this.mnuFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
          this.mnuFileNew.Size = new System.Drawing.Size(263, 22);
          this.mnuFileNew.Text = "&New Configuration";
-         this.mnuFileNew.ToolTipText = "Create a new configuration file";
+         this.mnuFileNew.ToolTipText = "Delete all clients and create new configuration";
          this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
          // 
          // mnuFileImport
