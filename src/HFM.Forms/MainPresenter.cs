@@ -696,11 +696,11 @@ namespace HFM.Forms
       {
          if (_clientDictionary.IsDirty)
          {
-            FileSaveClick();
+            SaveConfig();
          }
       }
 
-      public void FileSaveClick()
+      private void SaveConfig()
       {
          try
          {
