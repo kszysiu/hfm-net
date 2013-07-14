@@ -680,17 +680,15 @@ namespace HFM.Forms
          {
             // Read the config file
             _clientDictionary.Load(_settingsManager.Read(filePath, filterIndex));
-
-            if (_clientDictionary.Count == 0)
-            {
-               _messageBoxView.ShowError(_view, "No client configurations were loaded from the given config file.", _view.Text);
-            }
          }
          catch (Exception ex)
          {
-            _logger.ErrorFormat(ex, "{0}", ex.Message);
-            _messageBoxView.ShowError(_view, String.Format(CultureInfo.CurrentCulture,
-               "No client configurations were loaded from the given config file.{0}{0}{1}", Environment.NewLine, ex.Message), _view.Text);
+            if (!(ex is FileNotFoundException))
+            {
+               _logger.ErrorFormat(ex, "{0}", ex.Message);
+               _messageBoxView.ShowError(_view, String.Format(CultureInfo.CurrentCulture,
+                  "No client configurations were loaded from the given config file.{0}{0}{1}", Environment.NewLine, ex.Message), _view.Text);
+            }
          }
       }
 
