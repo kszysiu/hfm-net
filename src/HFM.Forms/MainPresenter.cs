@@ -704,9 +704,6 @@ namespace HFM.Forms
 
       public void FileSaveClick()
       {
-         // no clients, stub out
-         if (_clientDictionary.Count == 0) return;
-
          try
          {
             _settingsManager.Write(_clientDictionary.Values.Select(x => x.Settings), Constants.ExeName + ".hfmx", 1);
