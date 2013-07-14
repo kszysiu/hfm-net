@@ -288,32 +288,29 @@ namespace HFM.Core
       public void FtpDownloadHelper(Uri resourceUri, string localFilePath, string username, string password, FtpType ftpMode)
       {
          if (resourceUri == null) throw new ArgumentNullException("resourceUri");
-      
-         FtpDownloadHelper((FtpWebOperation)WebOperation.Create(resourceUri), localFilePath, username, password, ftpMode);
-      }
-
-      /// <summary>
-      /// Download a File via Ftp.
-      /// </summary>
-      /// <param name="ftpWebOperation">Web Operation.</param>
-      /// <param name="localFilePath">Path to local file.</param>
-      /// <param name="username">Ftp Login Username.</param>
-      /// <param name="password">Ftp Login Password.</param>
-      /// <param name="ftpMode">Ftp Transfer Mode.</param>
-      /// <exception cref="ArgumentNullException">Throws if ftpWebOperation is null.</exception>
-      /// <exception cref="ArgumentException">Throws if localFilePath is null or empty.</exception>
-      public void FtpDownloadHelper(IFtpWebOperation ftpWebOperation, string localFilePath, string username, string password, FtpType ftpMode)
-      {
-         if (ftpWebOperation == null) throw new ArgumentNullException("ftpWebOperation");
          if (String.IsNullOrEmpty(localFilePath)) throw new ArgumentException("Argument 'localFilePath' cannot be a null or empty string.");
 
-         _ftpWebOperation = ftpWebOperation;
-         _ftpWebOperation.WebOperationProgress += OnFtpWebOperationProgress;
-         _ftpWebOperation.FtpOperationRequest.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-         SetFtpMode(_ftpWebOperation.FtpOperationRequest, ftpMode);
+         using (FtpClient conn = new FtpClient()) {
+            conn.Host = resourceUri.Host;
+            conn.Port = resourceUri.Port;
+            conn.Credentials = new NetworkCredential(username, password);
+            conn.DataConnectionType = ftpMode == FtpType.Passive ? FtpDataConnectionType.AutoPassive : FtpDataConnectionType.AutoActive;
 
-         SetNetworkCredentials(_ftpWebOperation.OperationRequest.Request, username, password);
-         _ftpWebOperation.Download(localFilePath);
+            using (Stream istream = conn.OpenRead(resourceUri.AbsolutePath)) {
+               try {
+                  FileStream ostream = new FileStream(localFilePath, FileMode.Create);
+                  try {
+                     istream.CopyTo(ostream);
+                  }
+                  finally {
+                     ostream.Close();
+                  }
+               }
+               finally {
+                  istream.Close();
+               }
+            }
+         }
       }
 
       /// <summary>
