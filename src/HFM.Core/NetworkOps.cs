@@ -125,13 +125,7 @@ namespace HFM.Core
       {
          _prefs = prefs;
       }
-   
-      private IFtpWebOperation _ftpWebOperation;
-      public IFtpWebOperation FtpOperation
-      {
-         get { return _ftpWebOperation; }
-      }
-      
+
       public event EventHandler<WebOperationProgressEventArgs> FtpWebOperationProgress;
       protected void OnFtpWebOperationProgress(object sender, WebOperationProgressEventArgs e)
       {
@@ -564,24 +558,6 @@ namespace HFM.Core
          httpWebOperation.CheckConnection();
       }
 
-      private static void SetFtpMode(IFtpWebOperationRequest request, FtpType ftpMode)
-      {
-         Debug.Assert(request != null);
-      
-         switch (ftpMode)
-         {
-            case FtpType.Passive:
-               request.UsePassive = true;
-               break;
-            case FtpType.Active:
-               request.UsePassive = false;
-               break;
-            default:
-               throw new InvalidOperationException(String.Format(CultureInfo.CurrentCulture,
-                  "FTP Type '{0}' is not valid.", ftpMode));
-         }
-      }
-      
       /// <summary>
       /// Sends an e-mail message
       /// </summary>
