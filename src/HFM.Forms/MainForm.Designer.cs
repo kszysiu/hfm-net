@@ -395,7 +395,8 @@ namespace HFM.Forms
          // 
          this.mnuFileImport.Image = global::HFM.Forms.Properties.Resources.Import;
          this.mnuFileImport.Name = "mnuFileImport";
-         this.mnuFileImport.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+         this.mnuFileImport.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.I)));
          this.mnuFileImport.Size = new System.Drawing.Size(263, 22);
          this.mnuFileImport.Text = "&Import Configuration...";
          this.mnuFileImport.Click += new System.EventHandler(this.mnuFileImport_Click);
