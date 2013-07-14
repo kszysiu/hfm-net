@@ -505,31 +505,14 @@ namespace HFM.Core
          if (String.IsNullOrEmpty(server)) throw new ArgumentException("Argument 'server' cannot be a null or empty string.");
          if (String.IsNullOrEmpty(ftpPath)) throw new ArgumentException("Argument 'ftpPath' cannot be a null or empty string.");
 
-         var ftpWebOperation = (FtpWebOperation)WebOperation.Create(new Uri(
-            String.Format(CultureInfo.InvariantCulture, "ftp://{0}:{1}{2}", server, port, ftpPath)));
-         FtpCheckConnection(ftpWebOperation, username, password, ftpMode);
-      }
-
-      /// <summary>
-      /// Check an FTP Connection.
-      /// </summary>
-      /// <param name="ftpWebOperation">Web Operation.</param>
-      /// <param name="username">Ftp Login Username.</param>
-      /// <param name="password">Ftp Login Password.</param>
-      /// <param name="ftpMode">Ftp Transfer Mode.</param>
-      /// <exception cref="ArgumentException">Throws if ftpWebOperation is null.</exception>
-      public void FtpCheckConnection(IFtpWebOperation ftpWebOperation, string username, string password, FtpType ftpMode)
-      {
-         if (ftpWebOperation == null) throw new ArgumentNullException("ftpWebOperation");
-
-         ftpWebOperation.FtpOperationRequest.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-         ftpWebOperation.FtpOperationRequest.KeepAlive = false; // Close the Request
-         ftpWebOperation.FtpOperationRequest.Timeout = 5000; // 5 second timeout
-         SetFtpMode(ftpWebOperation.FtpOperationRequest, ftpMode);
-
-         SetNetworkCredentials(ftpWebOperation.OperationRequest.Request, username, password);
-
-         ftpWebOperation.CheckConnection();
+         using (FtpClient conn = new FtpClient()) {
+            conn.Host = server;
+            conn.Port = port;
+            conn.Credentials = new NetworkCredential(username, password);
+            conn.DataConnectionType = ftpMode == FtpType.Passive ? FtpDataConnectionType.AutoPassive : FtpDataConnectionType.AutoActive;
+            conn.SetWorkingDirectory(ftpPath);
+            conn.Connect();
+         }
       }
 
       /// <summary>
