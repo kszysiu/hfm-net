@@ -345,28 +345,13 @@ namespace HFM.Core
       {
          if (resourceUri == null) throw new ArgumentNullException("resourceUri", "Argument 'resourceUri' cannot be null.");
 
-         return GetFtpDownloadLength((IFtpWebOperation)WebOperation.Create(resourceUri), username, password, ftpMode);
-      }
-
-      /// <summary>
-      /// Get the Length of the Http Download.
-      /// </summary>
-      /// <param name="ftpWebOperation">Web Operation.</param>
-      /// <param name="username">Http Login Username.</param>
-      /// <param name="password">Http Login Password.</param>
-      /// <param name="ftpMode">Ftp Transfer Mode.</param>
-      /// <exception cref="ArgumentNullException">Throws if resourceUri is null.</exception>
-      public long GetFtpDownloadLength(IFtpWebOperation ftpWebOperation, string username, string password, FtpType ftpMode)
-      {
-         if (ftpWebOperation == null) throw new ArgumentNullException("ftpWebOperation", "Argument 'httpWebOperation' cannot be null.");
-
-         _ftpWebOperation = ftpWebOperation;
-         _ftpWebOperation.WebOperationProgress += OnHttpWebOperationProgress;
-         _ftpWebOperation.OperationRequest.CachePolicy = new RequestCachePolicy(RequestCacheLevel.NoCacheNoStore);
-         SetFtpMode(ftpWebOperation.FtpOperationRequest, ftpMode);
-
-         SetNetworkCredentials(_ftpWebOperation.OperationRequest.Request, username, password);
-         return _ftpWebOperation.GetDownloadLength();
+         using (FtpClient conn = new FtpClient()) {
+            conn.Host = resourceUri.Host;
+            conn.Port = resourceUri.Port;
+            conn.Credentials = new NetworkCredential(username, password);
+            conn.DataConnectionType = ftpMode == FtpType.Passive ? FtpDataConnectionType.AutoPassive : FtpDataConnectionType.AutoActive;
+            return conn.GetFileSize(resourceUri.AbsolutePath);
+         }
       }
 
       private IWebOperation _httpWebOperation;
