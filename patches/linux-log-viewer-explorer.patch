@@ -1,0 +1,165 @@
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM/app.config b/src/HFM/app.config
+--- a/src/HFM/app.config	2013-07-13 11:39:51.250410021 -0600
++++ b/src/HFM/app.config	2013-06-15 23:58:59.994117416 -0600
+@@ -93,10 +99,10 @@
+             <value>Standard</value>
+          </setting>
+          <setting name="LogFileViewer" serializeAs="String">
+-            <value>notepad.exe</value>
++            <value>xdg-open</value>
+          </setting>
+          <setting name="FileExplorer" serializeAs="String">
+-            <value>explorer.exe</value>
++            <value>xdg-open</value>
+          </setting>
+          <setting name="ProjectDownloadUrl" serializeAs="String">
+             <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM/bin/Debug/HFM.exe.config b/src/HFM/bin/Debug/HFM.exe.config
+--- a/src/HFM/bin/Debug/HFM.exe.config	2013-07-13 13:00:51.269311309 -0600
++++ b/src/HFM/bin/Debug/HFM.exe.config	2013-07-06 22:40:30.826557233 -0600
+@@ -93,10 +99,10 @@
+             <value>Standard</value>
+          </setting>
+          <setting name="LogFileViewer" serializeAs="String">
+-            <value>notepad.exe</value>
++            <value>xdg-open</value>
+          </setting>
+          <setting name="FileExplorer" serializeAs="String">
+-            <value>explorer.exe</value>
++            <value>xdg-open</value>
+          </setting>
+          <setting name="ProjectDownloadUrl" serializeAs="String">
+             <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM/bin/Debug/HFM.Preferences.dll.config b/src/HFM/bin/Debug/HFM.Preferences.dll.config
+--- a/src/HFM/bin/Debug/HFM.Preferences.dll.config	2013-07-13 13:00:51.339310430 -0600
++++ b/src/HFM/bin/Debug/HFM.Preferences.dll.config	2013-07-06 22:40:30.856556857 -0600
+@@ -80,10 +86,10 @@
+                 <value>Standard</value>
+             </setting>
+             <setting name="LogFileViewer" serializeAs="String">
+-                <value>notepad.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="FileExplorer" serializeAs="String">
+-                <value>explorer.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="ProjectDownloadUrl" serializeAs="String">
+                 <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM/bin/Release/HFM.exe.config b/src/HFM/bin/Release/HFM.exe.config
+--- a/src/HFM/bin/Release/HFM.exe.config	2013-07-13 21:47:16.332233295 -0600
++++ b/src/HFM/bin/Release/HFM.exe.config	2013-07-12 21:16:04.951954828 -0600
+@@ -93,10 +99,10 @@
+             <value>Standard</value>
+          </setting>
+          <setting name="LogFileViewer" serializeAs="String">
+-            <value>notepad.exe</value>
++            <value>xdg-open</value>
+          </setting>
+          <setting name="FileExplorer" serializeAs="String">
+-            <value>explorer.exe</value>
++            <value>xdg-open</value>
+          </setting>
+          <setting name="ProjectDownloadUrl" serializeAs="String">
+             <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM/bin/Release/HFM.Preferences.dll.config b/src/HFM/bin/Release/HFM.Preferences.dll.config
+--- a/src/HFM/bin/Release/HFM.Preferences.dll.config	2013-07-13 21:47:16.342233169 -0600
++++ b/src/HFM/bin/Release/HFM.Preferences.dll.config	2013-07-12 21:16:04.971954578 -0600
+@@ -80,10 +86,10 @@
+                 <value>Standard</value>
+             </setting>
+             <setting name="LogFileViewer" serializeAs="String">
+-                <value>notepad.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="FileExplorer" serializeAs="String">
+-                <value>explorer.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="ProjectDownloadUrl" serializeAs="String">
+                 <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM.Preferences/app.config b/src/HFM.Preferences/app.config
+--- a/src/HFM.Preferences/app.config	2013-07-13 11:39:51.240410147 -0600
++++ b/src/HFM.Preferences/app.config	2013-06-15 23:58:46.934281601 -0600
+@@ -80,10 +86,10 @@
+                 <value>Standard</value>
+             </setting>
+             <setting name="LogFileViewer" serializeAs="String">
+-                <value>notepad.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="FileExplorer" serializeAs="String">
+-                <value>explorer.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="ProjectDownloadUrl" serializeAs="String">
+                 <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM.Preferences/bin/Debug/HFM.Preferences.dll.config b/src/HFM.Preferences/bin/Debug/HFM.Preferences.dll.config
+--- a/src/HFM.Preferences/bin/Debug/HFM.Preferences.dll.config	2013-07-13 13:00:49.959327778 -0600
++++ b/src/HFM.Preferences/bin/Debug/HFM.Preferences.dll.config	2013-07-06 22:40:29.606572571 -0600
+@@ -80,10 +86,10 @@
+                 <value>Standard</value>
+             </setting>
+             <setting name="LogFileViewer" serializeAs="String">
+-                <value>notepad.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="FileExplorer" serializeAs="String">
+-                <value>explorer.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="ProjectDownloadUrl" serializeAs="String">
+                 <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM.Preferences/bin/Release/HFM.Preferences.dll.config b/src/HFM.Preferences/bin/Release/HFM.Preferences.dll.config
+--- a/src/HFM.Preferences/bin/Release/HFM.Preferences.dll.config	2013-07-13 21:47:15.132248381 -0600
++++ b/src/HFM.Preferences/bin/Release/HFM.Preferences.dll.config	2013-07-12 21:16:03.751969914 -0600
+@@ -80,10 +86,10 @@
+                 <value>Standard</value>
+             </setting>
+             <setting name="LogFileViewer" serializeAs="String">
+-                <value>notepad.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="FileExplorer" serializeAs="String">
+-                <value>explorer.exe</value>
++                <value>xdg-open</value>
+             </setting>
+             <setting name="ProjectDownloadUrl" serializeAs="String">
+                 <value>http://fah-web.stanford.edu/psummary.html</value>
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM.Preferences/Properties/Settings.Designer.cs b/src/HFM.Preferences/Properties/Settings.Designer.cs
+--- a/src/HFM.Preferences/Properties/Settings.Designer.cs	2013-07-13 11:39:51.240410147 -0600
++++ b/src/HFM.Preferences/Properties/Settings.Designer.cs	2013-06-16 19:19:28.345186837 -0600
+@@ -346,7 +370,7 @@
+         
+         [global::System.Configuration.UserScopedSettingAttribute()]
+         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+-        [global::System.Configuration.DefaultSettingValueAttribute("notepad.exe")]
++        [global::System.Configuration.DefaultSettingValueAttribute("xdg-open")]
+         public string LogFileViewer {
+             get {
+                 return ((string)(this["LogFileViewer"]));
+@@ -358,7 +382,7 @@
+         
+         [global::System.Configuration.UserScopedSettingAttribute()]
+         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+-        [global::System.Configuration.DefaultSettingValueAttribute("explorer.exe")]
++        [global::System.Configuration.DefaultSettingValueAttribute("xdg-open")]
+         public string FileExplorer {
+             get {
+                 return ((string)(this["FileExplorer"]));
+diff -ru '--exclude=*~' '--exclude=.git' '--exclude=.svn' '--exclude=*~' a/src/HFM.Preferences/Properties/Settings.settings b/src/HFM.Preferences/Properties/Settings.settings
+--- a/src/HFM.Preferences/Properties/Settings.settings	2013-07-13 11:39:51.240410147 -0600
++++ b/src/HFM.Preferences/Properties/Settings.settings	2013-06-15 23:58:53.894194103 -0600
+@@ -84,10 +90,10 @@
+       <Value Profile="(Default)">Standard</Value>
+     </Setting>
+     <Setting Name="LogFileViewer" Type="System.String" Scope="User">
+-      <Value Profile="(Default)">notepad.exe</Value>
++      <Value Profile="(Default)">xdg-open</Value>
+     </Setting>
+     <Setting Name="FileExplorer" Type="System.String" Scope="User">
+-      <Value Profile="(Default)">explorer.exe</Value>
++      <Value Profile="(Default)">xdg-open</Value>
+     </Setting>
+     <Setting Name="ProjectDownloadUrl" Type="System.String" Scope="User">
+       <Value Profile="(Default)">http://fah-web.stanford.edu/psummary.html</Value>
