@@ -91,8 +91,6 @@ namespace HFM.Client
       private readonly StringBuilder _readBuffer;
       private readonly Timer _timer;
 
-      private int _updating = 0;
-
       private static readonly object BufferLock = new object();
 
       #endregion
@@ -225,6 +223,7 @@ namespace HFM.Client
          _readBuffer = new StringBuilder();
          _timer = new Timer(DefaultSocketTimerLength);
          _timer.Elapsed += SocketTimerElapsed;
+         _timer.AutoReset = false;
       }
 
       #endregion
@@ -453,17 +452,9 @@ Unhandled Exception: System.ObjectDisposedException: The object was used after b
 
       internal void SocketTimerElapsed(object sender, ElapsedEventArgs e)
       {
-
-         if (System.Threading.Interlocked.CompareExchange (ref _updating, 1, 0) == 1)
-         {
-            return;
-         }
-
          Debug.Assert(Connected);
          try
          {
-            ((Timer)sender).Stop();
-
             Update();
          }
          catch (Exception ex)
@@ -483,7 +474,6 @@ Unhandled Exception: System.ObjectDisposedException: The object was used after b
                ((Timer)sender).Start();
             }
          }
-         _updating = 0;
       }
 
       private static bool IsCancelBlockingCallSocketError(Exception ex)
