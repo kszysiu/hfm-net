@@ -469,7 +469,7 @@ Unhandled Exception: System.ObjectDisposedException: The object was used after b
          }
          finally
          {
-			if (_tcpClient.Connected)
+            if (_tcpClient.Connected)
             {
                ((Timer)sender).Start();
             }
