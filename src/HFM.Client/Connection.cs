@@ -459,7 +459,6 @@ Unhandled Exception: System.ObjectDisposedException: The object was used after b
          }
          catch (Exception ex)
          {
-            //Console.WriteLine(DateTime.Now + " exception caught -- closing");
             if (!IsCancelBlockingCallSocketError(ex))
             {
                OnStatusMessage(new StatusMessageEventArgs(String.Format(CultureInfo.CurrentCulture,
