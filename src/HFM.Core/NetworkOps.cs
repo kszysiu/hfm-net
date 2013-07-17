@@ -210,7 +210,7 @@ namespace HFM.Core
 
             using (Stream ostream = conn.OpenWrite(resourceUri.AbsolutePath)) {
                try {
-                  FileStream istream = new FileStream(localFilePath, FileMode.Open, FileAccess.Read);
+                  FileStream istream = new FileStream(localFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                   try {
                      istream.CopyTo(ostream);
                   }
